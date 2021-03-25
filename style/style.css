@@ -1,0 +1,45 @@
+html{
+	font-size: 62.5%;
+	box-sizing: border-box;
+	background-color: #222;
+}
+*,*:before,*:after{
+	box-sizing: inherit;
+	margin: 0;
+}
+.centrar{
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.carta-box {
+  margin: 100px;
+  width: 200px;
+  height: 250px;
+  position: relative;
+  perspective: 1000px;
+}
+
+/*.carta-box:hover .carta {
+    transform: rotateY(180deg);
+}
+*/
+.carta {
+  transform-style: preserve-3d;
+  transition: all 0.5s linear;
+}
+
+.cara {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.cara img{
+	width: 20rem;
+	height: 25rem;
+}
+
+.cara.detras {
+  transform: rotateY(180deg);
+}
