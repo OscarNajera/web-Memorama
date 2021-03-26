@@ -43,3 +43,8 @@ html{
 .cara.detras {
   transform: rotateY(180deg);
 }
+
+#contenedor-img{
+	display: flex;
+
+}

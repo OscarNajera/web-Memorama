@@ -4,7 +4,8 @@ var img = document.getElementsByTagName("img");
 var btn = document.getElementById("btn");
 var contenedorImg= document.getElementById("contenedor-img");
 var imgcont=1;
- 
+var activo=[];
+var contadorActivo=0;
 
 
 //se crean las classes y id para posteriormente trabajar con estas 
@@ -24,9 +25,20 @@ function voltear(){
     this.style.transition = "0.4s linear";
     this.classList.add("activo");
     let xclase= this.id;
+    console.log(this.id)
+    console.log(xclase.substr(3))
     let reverso=document.getElementsByClassName(xclase);
     reverso[0].style.transform = "rotateY(0deg)";
     reverso[0].style.transition = "0.4s linear";
+
+    let temporal="img"+xclase.substr(3);//variable que rescata el numero la clase de la imagen 
+    console.log(temporal);
+    let temporalsrc = document.getElementsByClassName(temporal);//accedemos a la imagen atravez de la classe
+    temporal=temporalsrc[0].getAttribute("src");                //extraemos el nombre de la imagen
+    temporal=temporal.substr(4 ,temporal.length-4);             //se acorta el texpo para solo tener el nombre de la imagen
+    console.log(temporal);
+
+
  
 }
  
