@@ -27,14 +27,13 @@ function voltear(){
     this.classList.add("activo");
     xclase[contadorActivo]= this.id;
 
-    //console.log("xclase =" + xclase[contadorActivo];
     let reverso=document.getElementsByClassName(xclase[contadorActivo]);
     reverso[0].style.transform = "rotateY(0deg)";
     reverso[0].style.transition = "0.4s linear";
 
     let temporal="img"+xclase[contadorActivo].substr(3);//variable que rescata el numero la clase de la imagen 
-    let temporalsrc = document.getElementsByClassName(temporal);//accedemos a la imagen atravez de la classe
-    temporal=temporalsrc[0].getAttribute("src");                //extraemos el nombre de la imagen
+    let temporalsrc = document.getElementsByClassName(temporal); //accedemos a la imagen atravez de la classe
+    temporal=temporalsrc[0].getAttribute("src");                 //extraemos el nombre de la imagen
     tempora2=temporal.substr(4 ,temporal.length-4 );             //se acorta el texpo para solo tener el nombre de la imagen
     console.log("nombre de img"+temporal);
     eliminaEvento[contadorActivo]=xclase[contadorActivo].substr(3);
@@ -42,7 +41,7 @@ function voltear(){
     activo[contadorActivo]=temporal;                            //nombre de la imagen
 
     if (contadorActivo==1) {
-    	 validarPares(eliminaEvento[0],eliminaEvento[1], activo[0],activo[1],xclase[0],xclase[1]);   //parametro 1 y 2 referencian un indice de los eventos 3 y 4 es el nombre de la imagen
+    	 validarPares(eliminaEvento[0],eliminaEvento[1], activo[0],activo[1]);   //parametro 1 y 2 referencian un indice de los eventos 3 y 4 es el nombre de la imagen
     	 console.log('contadorActivo= '+contadorActivo) 
     }
     else {
@@ -51,7 +50,7 @@ function voltear(){
     
 }
  
-function validarPares(eventox,eventoy,valida1,valida2,xxclase,yclase){
+function validarPares(eventox,eventoy,valida1,valida2){
 	if (valida1==valida2) {
 		console.log("son pares");
         //carta_box[eventox].removeEventListener("click", voltear);
@@ -67,18 +66,18 @@ function validarPares(eventox,eventoy,valida1,valida2,xxclase,yclase){
 		//se devuelve la clase
 		carta_box[eventox].addEventListener("click", voltear);
         carta_box[eventoy].addEventListener("click", voltear);
+
         //se rota la imagen de portada o carta-box
         carta_box[eventox].style.transform = "rotateY(0deg)";
         carta_box[eventox].style.transition = "0.4s linear";
         carta_box[eventoy].style.transform = "rotateY(0deg)";
         carta_box[eventoy].style.transition = "0.4s linear";
-        //se restaura la imagen para
 
+        //se restaura la imagen para
     	let reversox=document.getElementsByClassName(xclase[0]);
     	console.log('xclase-- = ' + xclase)
     	reversox[0].style.transform = "rotateY(180deg)";
     	reversox[0].style.transition = "0.4s linear";
-
     	let reversoy=document.getElementsByClassName(xclase[1]);
     	console.log('xclase-- = ' + xclase)
     	reversoy[0].style.transform = "rotateY(180deg)";
