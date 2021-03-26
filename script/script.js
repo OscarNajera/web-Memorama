@@ -35,7 +35,7 @@ function voltear(){
     console.log(temporal);
     let temporalsrc = document.getElementsByClassName(temporal);//accedemos a la imagen atravez de la classe
     temporal=temporalsrc[0].getAttribute("src");                //extraemos el nombre de la imagen
-    temporal=temporal.substr(4 ,temporal.length-4);             //se acorta el texpo para solo tener el nombre de la imagen
+    temporal=temporal.substr(4 ,temporal.length-4 );             //se acorta el texpo para solo tener el nombre de la imagen
     console.log(temporal);
 
 
