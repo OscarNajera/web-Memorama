@@ -20,7 +20,13 @@ html{
   position: relative;
   perspective: 1000px;
 }
-
+.inactivo{
+  margin: 100px;
+  width: 200px;
+  height: 250px;
+  position: relative;
+  perspective: 1000px;
+}
 /*.carta-box:hover .carta {
     transform: rotateY(180deg);
 }
