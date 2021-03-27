@@ -4,7 +4,7 @@ html{
 	background-color: #222;
 }
 *,*:before,*:after{
-	box-sizing: inherit;
+	box-sizing: inherit; 
 	margin: 0;
 }
 .centrar{
@@ -13,12 +13,19 @@ html{
 	text-align: center;
 }
 
+#contenedor-img{
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 1rem;
+ 
+}
 .carta-box {
-   
+
   width: 200px;
   height: 250px;
   position: relative;
   perspective: 1000px;
+  margin: 1rem;
 }
 .inactivo{
   margin: 100px;
@@ -50,8 +57,5 @@ html{
   transform: rotateY(180deg);
 }
 
-#contenedor-img{
-	display: flex;
-	justify-content: space-between;
 
-}
+

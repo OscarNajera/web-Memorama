@@ -35,14 +35,14 @@ function voltear(){
     let temporalsrc = document.getElementsByClassName(temporal); //accedemos a la imagen atravez de la classe
     temporal=temporalsrc[0].getAttribute("src");                 //extraemos el nombre de la imagen
     tempora2=temporal.substr(4 ,temporal.length-4 );             //se acorta el texpo para solo tener el nombre de la imagen
-    console.log("nombre de img"+temporal);
     eliminaEvento[contadorActivo]=xclase[contadorActivo].substr(3);
     carta_box[xclase[contadorActivo].substr(3)].removeEventListener("click", voltear);
     activo[contadorActivo]=temporal;                            //nombre de la imagen
-
+    console.log(contadorActivo);
     if (contadorActivo==1) {
-    	 validarPares(eliminaEvento[0],eliminaEvento[1], activo[0],activo[1]);   //parametro 1 y 2 referencian un indice de los eventos 3 y 4 es el nombre de la imagen
-    	 console.log('contadorActivo= '+contadorActivo) 
+    	//validarPares(eliminaEvento[0],eliminaEvento[1], activo[0],activo[1]);   //parametro 1 y 2 referencian un indice de los eventos 3 y 4 es el nombre de la imagen
+    	//console.log('contadorActivo= '+contadorActivo) 
+        setTimeout(function(){validarPares(eliminaEvento[0],eliminaEvento[1], activo[0],activo[1]) }, 800);//temporizador 
     }
     else {
     	contadorActivo++;
@@ -53,12 +53,6 @@ function voltear(){
 function validarPares(eventox,eventoy,valida1,valida2){
 	if (valida1==valida2) {
 		console.log("son pares");
-        //carta_box[eventox].removeEventListener("click", voltear);
-        //carta_box[eventoy].removeEventListener("click", voltear);
-
-		//let elimina = document.querySelectorAll("img[src='img/vista.jpg']");
-		//elimina[0].style.width="500px"
-		//elimina[1].style.width="500px"
 
 	} 	
 	else {
@@ -75,11 +69,9 @@ function validarPares(eventox,eventoy,valida1,valida2){
 
         //se restaura la imagen para
     	let reversox=document.getElementsByClassName(xclase[0]);
-    	console.log('xclase-- = ' + xclase)
     	reversox[0].style.transform = "rotateY(180deg)";
     	reversox[0].style.transition = "0.4s linear";
     	let reversoy=document.getElementsByClassName(xclase[1]);
-    	console.log('xclase-- = ' + xclase)
     	reversoy[0].style.transform = "rotateY(180deg)";
     	reversoy[0].style.transition = "0.4s linear";
 
