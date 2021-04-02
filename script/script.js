@@ -195,7 +195,7 @@ function crearCarta(Xcarta){
 	creaCarta.appendChild(creaCara);
 	creaCarta.appendChild(creaDetras);
 
-	creaImg.setAttribute("src","img/carta.jpg");
+	creaImg.setAttribute("src","https://cdn.pixabay.com/photo/2012/05/07/18/52/card-game-48980_960_720.png");
 	creaCara.appendChild(creaImg);
 
 
