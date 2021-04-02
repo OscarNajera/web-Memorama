@@ -111,7 +111,11 @@ function recopilaImagen() {  //funcion que recorrera las imagenes y las mostrara
 	let tamano=0;
 	let repit=0;
 	let contador=0;
-
+	/*
+	  Se realizara la lectura de las imagenesy s efiltrara el nombre de estas
+	  la variable memorama se usara mas adelante para el acomodo de las imagenes en una funcion random	
+	  se usa paar que el arreglo sea 3 veces el tamaño y asi el random busque en menos espacios	
+	*/
     for(let i=0;i<fileVal.length;i++){
   		nombreImg.push(fileVal[i].name);
 
@@ -126,7 +130,11 @@ function recopilaImagen() {  //funcion que recorrera las imagenes y las mostrara
     }
 
     //////////////////////////
-
+    /*
+	  for que permite el acomodo aleatorio de las imagenes 
+	  en el arreglo memoram si encuentra * se guarda el nombre de la imagen
+	  de lo contrario colvera a intentarlo	
+    */
     for(let i=0;i<nombreImg.length ; i++ ){
 
  		while (true) {
@@ -146,13 +154,21 @@ function recopilaImagen() {  //funcion que recorrera las imagenes y las mostrara
 
  		}
  	}
+ 	/*
+		for que permite el el filtrado de del memorama ya que en el
+		arreglo memorama se cuenta tanto con las imagenes como con asteriscos
+		este filtra solo el nombre de la imagen y lo almacena en memoramaFiltro 
 
+ 	*/
  	console.log('memorama = '+ memorama.length + memorama)
  	for(let i=0;i<memorama.length;i++){
  		if (memorama[i] != "*") {
  			memoramaFiltro.push(memorama[i]);
  		}
  	}
+ 	/*
+	    for para imprimir las imagenes ya ene sta parte las imagenes estan en orden aleatorio
+ 	*/
     for(let i=0;i<memoramaFiltro.length ;i++){
     	crearCarta(memoramaFiltro[i]);
     }
@@ -168,10 +184,11 @@ function recopilaImagen() {  //funcion que recorrera las imagenes y las mostrara
 
   iniciar();
   
-
 }
 
-
+/*Esta funcion realiza la creacion de las cartas y le agregar
+los estilos y las clases necesarias
+*/
 function crearCarta(Xcarta){
 	let creaCartaBox= document.createElement("div");
 	creaCartaBox.setAttribute("class","carta-box");
