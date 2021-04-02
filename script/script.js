@@ -100,18 +100,72 @@ function validarPares(eventox,eventoy,valida1,valida2){
 var fileVal=document.getElementById("files").files; //lectura de ficheros
 var btn=document.getElementById("btn");  //etiqueta boton
 var nombreImg=[];
+var memorama=[];
+var memoramaFiltro=[];
+var ramdom=0;
+
 btn.addEventListener("click", recopilaImagen );  //al precionar el boton se mostraran las imagenes
 
 function recopilaImagen() {  //funcion que recorrera las imagenes y las mostrara
-  let contenido="";
-  for(let i=0;i<fileVal.length;i++){
-  	  nombreImg[i]=fileVal[i].name;
-  console.log(nombreImg[i]);     
-      //let imgtemporal=fileVal[i].name;
-      //console.log(imgtemporal)
-      crearCarta(nombreImg[i]);
-  }
-  //console.log(nombreImg);
+	var random;
+	let tamano=0;
+	let repit=0;
+	let contador=0;
+
+    for(let i=0;i<fileVal.length;i++){
+  		nombreImg.push(fileVal[i].name);
+
+  		memorama.push("*");
+  		memorama.push("*");
+  		memorama.push("*");
+  		memorama.push("*");
+  		memorama.push("*");
+  		memorama.push("*");
+  		nombreImg.push(fileVal[i].name);
+        
+    }
+
+    //////////////////////////
+
+    for(let i=0;i<nombreImg.length ; i++ ){
+
+ 		while (true) {
+ 		random=Math.floor(Math.random() * memorama.length) + 1;
+
+ 			console.log("Amemorama ["+ random + "]="+ memorama[random]);
+
+ 			if (memorama[random] == "*") {
+ 				memorama[random]=nombreImg[i];
+ 				console.log("Dmemorama ["+ random + "]="+ memorama[random]);
+ 				console.log('memorama= '+ memorama);
+ 				break;
+ 			}
+ 			else {
+ 				console.log('no es igual')
+ 			}
+
+ 		}
+ 	}
+
+ 	console.log('memorama = '+ memorama.length + memorama)
+ 	for(let i=0;i<memorama.length;i++){
+ 		if (memorama[i] != "*") {
+ 			memoramaFiltro.push(memorama[i]);
+ 		}
+ 	}
+    for(let i=0;i<memoramaFiltro.length ;i++){
+    	crearCarta(memoramaFiltro[i]);
+    }
+
+  
+
+
+
+    //////////////////////////
+
+
+
+
   iniciar();
   
 
@@ -148,8 +202,6 @@ function crearCarta(Xcarta){
 	creaImgD.setAttribute("src","img/"+Xcarta);
  	creaDetras.appendChild(creaImgD);
  
-
-
 
 
 } 

@@ -7,6 +7,17 @@ html{
 	box-sizing: inherit; 
 	margin: 0;
 }
+
+
+.contenedor{
+	color: white;
+}
+
+.contenedor p{
+	font-size: 2rem;
+}
+
+
 .centrar{
 	width: 80%;
 	margin: 0 auto;
@@ -57,5 +68,4 @@ html{
   transform: rotateY(180deg);
 }
 
-
-
+ 

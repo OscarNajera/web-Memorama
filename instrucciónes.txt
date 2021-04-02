@@ -1,0 +1,2 @@
+Cear un carpeta llamada img
+dentro de esta carpeta coloque las imagenes con las cuales jugara
